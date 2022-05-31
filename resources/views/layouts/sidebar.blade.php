@@ -97,18 +97,25 @@
         </li>
 
         <!-- Components -->
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Diagnosa</span></li>
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Tabel Diagnosa</span></li>
         <!-- Cards -->
+        
+       
         <li class="menu-item">
-            <a href="cards-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Diagnosa Penyakit</div>
+            <a href="{{ route('laporan.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-box"></i>
+                <div data-i18n="Basic">Data Diagnosa</div>
             </a>
         </li>
+        <!-- Components -->
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Tabel User</span></li>
+        <!-- Cards -->
+        
+       
         <li class="menu-item">
-            <a href="cards-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-box"></i>
-                <div data-i18n="Basic">Hasil Diagnosa</div>
+            <a href="{{ route('user.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Basic">Data User</div>
             </a>
         </li>
 

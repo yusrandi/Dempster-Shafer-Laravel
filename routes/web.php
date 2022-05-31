@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\BasisPengetahuansController;
 use App\Http\Controllers\GejalaController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PenyakitController;
+use App\Http\Controllers\UserController;
 use App\Models\Gejala;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +38,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('basisPengetahuans/delete/{basisPengetahuans}', [BasisPengetahuansController::class, 'destroy']);
     Route::put('basis/{basisPengetahuans}', [BasisPengetahuansController::class, 'update']);
 
-
-
+    Route::get('laporan', [LaporanController::class, 'index'])->name('laporan.index');
+    Route::get('laporan/delete/{laporan}', [LaporanController::class, 'destroy']);
+    Route::resource('user', UserController::class)->except('create', 'show');
+    Route::get('user/delete/{user}', [UserController::class, 'destroy']);
 });

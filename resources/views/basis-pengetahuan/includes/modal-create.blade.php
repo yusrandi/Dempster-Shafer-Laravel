@@ -46,7 +46,7 @@
                             aria-describedby="basic-icon-default-company2" name="bobot" required />
 
                     </div>
-                    <small class="text-muted">please use "." (dot) to separate</small>
+                    <small class="text-muted">please use "." (dot) to separate and for value 0.0 - 1.0</small>
 
 
                 </div>
