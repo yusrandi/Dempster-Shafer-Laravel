@@ -38,7 +38,7 @@
                                                 <th>#</th>
                                                 <th>Penyakit</th>
                                                 <th>Gejala</th>
-                                                <th>Bobot</th>
+                                                
                                                 <th class="text-end">Actions</th>
                                             </tr>
                                         </thead>
@@ -48,7 +48,7 @@
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $item->penyakit->penyakit_nama }}</td>
                                                     <td>{{ $item->gejala->gejala_nama }}</td>
-                                                    <td>{{ $item->bobot }}</td>
+                                                   
 
                                                     <td class="text-end">
                                                         <a href="#basisPengetahuanEditModal"

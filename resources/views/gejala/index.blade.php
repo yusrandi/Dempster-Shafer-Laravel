@@ -36,6 +36,7 @@
                                                 <th>#</th>
                                                 <th>Kode Gejala/Ciri-Ciri</th>
                                                 <th>Nama Gejala/Ciri-Ciri</th>
+                                                <th>Bobot</th>
                                                 <th>Status</th>
                                                 <th class="text-center">Count</th>
                                                 <th class="text-end">Actions</th>
@@ -47,6 +48,7 @@
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $item->gejala_kode }}</td>
                                                     <td>{{ $item->gejala_nama }}</td>
+                                                    <td>{{ $item->bobot }}</td>
                                                     <td>{{ $item->status == 'C' ? 'Ciri-Ciri' : 'Gejala' }}</td>
                                                     <td class="text-center">{{ count($item->basisPengetahuans) }}</td>
 
@@ -120,6 +122,7 @@
 
                 $('#tes').val(obj.status);
                 $('#gejala_nama').val(obj.gejala_nama);
+                $('#bobot').val(obj.bobot);
 
 
                 $('#editForm').attr('action', 'gejalas/' + obj.id);

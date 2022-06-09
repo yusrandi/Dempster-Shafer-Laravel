@@ -22,7 +22,6 @@ class CreateBasisPengetahuansTable extends Migration
             $table->unsignedBigInteger('gejala_id')->nullable();
             $table->foreign('gejala_id')->references('id')->on('gejalas');
 
-            $table->double('bobot');
             $table->timestamps();
         });
     }

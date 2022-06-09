@@ -12,7 +12,7 @@ class BasisPengetahuans extends Model
     protected $casts = [
         'penyakit_id' => 'integer',
         'gejala_id' => 'integer',
-        'bobot' => 'decimal:1',
+
 
     ];
 

@@ -21,14 +21,22 @@
                     </select>
 
                 </div>
-
-
-
                 <div class="col mb-3">
                     <label for="nameBackdrop" class="form-label">Nama Gejala</label>
                     <input type="text" class="form-control" placeholder="Enter Name" name="gejala_nama"
                         id="gejala_nama" required>
 
+                </div>
+                <div class="col mb-3">
+                    <label class="form-label" for="basic-icon-default-company">Bobot</label>
+                    <div class="input-group input-group-merge">
+                        <span id="basic-icon-default-company2" class="input-group-text"><i
+                                class="bx bx-hive"></i></span>
+                        <input type="text" class="form-control " placeholder="0.2" aria-label="Bobot"
+                            aria-describedby="basic-icon-default-company2" name="bobot" id="bobot" required />
+
+                    </div>
+                    <small class="text-muted">please use "." (dot) to separate and for value 0.0 - 1.0</small>
                 </div>
 
             </div>

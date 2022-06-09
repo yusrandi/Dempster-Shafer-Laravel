@@ -37,21 +37,6 @@
 
                 </div>
 
-                <div class="col mb-3">
-                    <label class="form-label" for="basic-icon-default-company">Bobot</label>
-                    <div class="input-group input-group-merge">
-                        <span id="basic-icon-default-company2" class="input-group-text"><i
-                                class="bx bx-hive"></i></span>
-                        <input type="text" class="form-control " placeholder="0.2" aria-label="Bobot"
-                            aria-describedby="basic-icon-default-company2" name="bobot" required />
-
-                    </div>
-                    <small class="text-muted">please use "." (dot) to separate and for value 0.0 - 1.0</small>
-
-
-                </div>
-
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
