@@ -16,6 +16,6 @@ class Gejala extends Model
     ];
     public function basisPengetahuans()
     {
-        return $this->hasMany(BasisPengetahuans::class);
+        return $this->hasMany(BasisPengetahuans::class)->with('penyakit');
     }
 }

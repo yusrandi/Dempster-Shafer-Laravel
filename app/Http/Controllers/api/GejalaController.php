@@ -10,7 +10,7 @@ class GejalaController extends Controller
 {
     public function index()
     {
-        $data = Gejala::orderby('gejala_nama')->get();
+        $data = Gejala::with('basisPengetahuans')->orderby('gejala_nama')->get();
 
         return response()->json([
             'responsecode' => '1',
