@@ -5,6 +5,8 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
@@ -64,6 +66,38 @@ class UserController extends Controller
 
                 ], 201);
             }
+        }
+    }
+
+    public function insert(Request $request)
+    {
+        $daftar = User::where('phone', $request->phone)
+            ->first();
+
+        if (!$daftar) {
+
+            $user = User::create([
+                'name' => $request->name,
+                'address' => $request->address,
+                'phone' => $request->phone,
+                'tgl_lahir_anak' => $request->tgl_lahir_anak,
+                'nama_anak' => $request->nama_anak,
+                'password' => Hash::make($request->password),
+                'role_id' => 3,
+            ]);
+
+            return response()->json([
+                'responsecode' => '1',
+                'responsemsg' => 'Selamat Bergabung!',
+                'data' => $user
+
+            ], 201);
+        } else {
+            return response()->json([
+                'responsecode' => '0',
+                'responsemsg' => 'Maaf Email atau Nomor anda sudah terdaftar',
+                'data' => $daftar
+            ], 201);
         }
     }
 }

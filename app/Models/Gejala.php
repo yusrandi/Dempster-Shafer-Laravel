@@ -10,7 +10,6 @@ class Gejala extends Model
     use HasFactory;
     protected $guarded = [];
     protected $casts = [
-
         'bobot' => 'decimal:1',
 
     ];

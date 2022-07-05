@@ -30,4 +30,5 @@ Route::get('/laporan', [LaporanController::class, 'index']);
 Route::post('/laporan', [LaporanController::class, 'store']);
 
 Route::post('/user/login', [UserController::class, 'login']);
+Route::post('/user/regis', [UserController::class, 'insert']);
 Route::get('/user/{userId}', [UserController::class, 'index']);

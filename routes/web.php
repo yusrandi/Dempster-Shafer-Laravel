@@ -4,6 +4,7 @@ use App\Http\Controllers\BasisPengetahuansController;
 use App\Http\Controllers\GejalaController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PenyakitController;
+use App\Http\Controllers\RuleController;
 use App\Http\Controllers\UserController;
 use App\Models\Gejala;
 use Illuminate\Support\Facades\Auth;
@@ -42,4 +43,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('laporan/delete/{laporan}', [LaporanController::class, 'destroy']);
     Route::resource('user', UserController::class)->except('create', 'show');
     Route::get('user/delete/{user}', [UserController::class, 'destroy']);
+    Route::get('rule', [RuleController::class, 'index'])->name('rule.index');
 });

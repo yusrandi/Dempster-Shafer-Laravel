@@ -90,6 +90,12 @@
         </li>
 
         <li class="menu-item">
+            <a href="{{ route('rule.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Basic">Rule</div>
+            </a>
+        </li>
+        <li class="menu-item">
             <a href="{{ route('basisPengetahuans.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Basic">Basis Pengetahuan</div>
