@@ -18,6 +18,7 @@ class CreateGejalasTable extends Migration
             $table->string('gejala_kode')->unique();
             $table->string('gejala_nama');
             $table->string('status');
+            $table->double('bobot')->default(0.0);
             $table->timestamps();
         });
     }

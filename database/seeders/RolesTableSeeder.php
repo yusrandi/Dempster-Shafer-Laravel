@@ -17,10 +17,11 @@ class RolesTableSeeder extends Seeder
         $roles = collect([
             'Admin',
             'Expert',
-            
-            
+            'Pasien',
+
+
         ]);
-        $roles->each(function($item){
+        $roles->each(function ($item) {
             Role::create([
                 'name' => $item,
             ]);

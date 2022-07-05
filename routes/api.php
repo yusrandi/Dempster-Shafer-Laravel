@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/penyakits', [PenyakitController::class, 'index']);
 Route::get('/gejalas', [GejalaController::class, 'index']);
 Route::get('/basis', [BasisPengetahuanController::class, 'index']);
-Route::get('/laporan', [LaporanController::class, 'index']);
+Route::get('/laporan/{id}', [LaporanController::class, 'index']);
 Route::post('/laporan', [LaporanController::class, 'store']);
 
 Route::post('/user/login', [UserController::class, 'login']);

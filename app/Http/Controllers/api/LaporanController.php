@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 
 class LaporanController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        $data = Laporan::with(['penyakit', 'user'])->latest()->get();
+        $data = Laporan::with(['penyakit', 'user'])
+            ->where('user_id', $id)
+            ->latest()->get();
 
         return response()->json([
             'responsecode' => '1',
@@ -23,7 +25,7 @@ class LaporanController extends Controller
         $ldate = date('Y-m-d');
         Laporan::create([
             'tanggal' => $ldate,
-            'penyakit_id' => $request->penyakit_id,
+            'penyakits' => $request->penyakits,
             'user_id' => $request->user_id,
             'cf' => $request->cf
         ]);
