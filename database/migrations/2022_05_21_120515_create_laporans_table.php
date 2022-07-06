@@ -19,6 +19,7 @@ class CreateLaporansTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('penyakits');
+            $table->string('gejalas');
             $table->string('cf');
             $table->string('tanggal');
             $table->timestamps();

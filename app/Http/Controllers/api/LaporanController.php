@@ -26,6 +26,7 @@ class LaporanController extends Controller
         Laporan::create([
             'tanggal' => $ldate,
             'penyakits' => $request->penyakits,
+            'gejalas' => $request->gejalas,
             'user_id' => $request->user_id,
             'cf' => $request->cf
         ]);
