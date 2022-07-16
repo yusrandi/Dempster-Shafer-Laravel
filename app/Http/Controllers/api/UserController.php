@@ -28,7 +28,7 @@ class UserController extends Controller
         $password = $request->password;
         $phone = $request->phone;
 
-        $login = User::where('phone', $phone)
+        $login = User::where(['phone' => $phone, 'role_id' => 3])
             // ->where('hak_akses', '!=', 1)
             // ->orwhere('hak_akses', 3)
             ->first();
