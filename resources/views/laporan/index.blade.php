@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Data Laporan')
 @section('page_css')
-
+    
 @endsection
 @section('content')
     <!-- Content -->
@@ -39,7 +39,7 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ \Carbon\Carbon::parse($item->tanggal)->format('j F Y')}}</td>
-                                                    <td>{{ $item->penyakit->penyakit_nama }}</td>
+                                                    <td>{{ $item->penyakits }}</td>
                                                     <td>{{ $item->user->name }}</td>
                                                     <td class="text-center">{{ $item->cf }}</td>
 
@@ -74,14 +74,14 @@
         </div>
         <!--/ Bootstrap modals -->
 
-
-
+    
     </div>
 
     <!-- / Content -->
 @endsection
 @section('page_js')
     @include('utils.toastr')
+   
     <script type="text/javascript">
         $(function() {
 

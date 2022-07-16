@@ -13,7 +13,7 @@ class LaporanController extends Controller
     {
 
         return view('laporan.index', [
-            'data' => Laporan::latest()->get()
+            'data' => Laporan::with('penyakit')->latest()->get()
         ]);
     }
 
