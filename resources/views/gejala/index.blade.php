@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Data Gejala')
+@section('title', 'Data Evidence')
 @section('page_css')
 
 @endsection
@@ -8,11 +8,11 @@
 
 
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Penyakit /</span> Data Gejala</h4>
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Penyakit /</span> Data Evidence</h4>
 
         <!-- Bootstrap modals -->
         <div class="card">
-            <h5 class="card-header">Data Gejala</h5>
+            <h5 class="card-header">Data Evidence</h5>
             <div class="card-body">
                 <div class="row gy-3">
 
@@ -24,7 +24,7 @@
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#backDropModal">
-                                    Tambah Gejala
+                                    Tambah Evidence
                                 </button>
                             @endif
 
@@ -37,8 +37,8 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Kode Gejala/Ciri-Ciri</th>
-                                                <th>Nama Gejala/Ciri-Ciri</th>
+                                                <th>Kode Evidence</th>
+                                                <th>Nama Evidence</th>
                                                 <th>Bobot</th>
                                                 <th>Status</th>
                                                 <th class="text-center">Count</th>

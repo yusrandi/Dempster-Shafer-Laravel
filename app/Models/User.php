@@ -46,4 +46,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'role_id' => 'integer',
     ];
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }

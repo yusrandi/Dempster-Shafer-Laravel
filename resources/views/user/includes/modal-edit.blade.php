@@ -26,23 +26,23 @@
                 <div class="col mb-3">
                     <label for="nameBackdrop" class="form-label">Nama User</label>
                     <input type="text"  class="form-control @error('name') is-invalid @enderror"
-                        placeholder="Enter Name" name="name" id="name" required>
+                        placeholder="Enter User Fullname" name="name" id="name" required>
 
                 </div>
                 <div class="col mb-3">
                     <label for="nameBackdrop" class="form-label">Alamat Lengkap</label>
                     <input type="text" id="address" class="form-control @error('address') is-invalid @enderror"
-                        placeholder="Enter Name" name="address"  required>
+                        placeholder="Enter User Address" name="address"  required>
                 </div>
                 <div class="col mb-3">
                     <label for="nameBackdrop" class="form-label">Nomor Hp</label>
                     <input type="number" id="phone" class="form-control @error('phone') is-invalid @enderror"
-                        placeholder="Enter Name" name="phone" required>
+                        placeholder="Enter User Phone Number" name="phone" required>
                 </div>
                 <div class="col mb-3">
                     <label for="nameBackdrop" class="form-label">Password</label>
                     <input type="password" id="password" class="form-control @error('password') is-invalid @enderror"
-                        placeholder="Enter Name" name="password" id="password" required minlength="8">
+                        placeholder="Enter User Password" name="password" id="password" required minlength="8">
                 </div>
 
             </div>

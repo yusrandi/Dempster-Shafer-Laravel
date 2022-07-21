@@ -6,14 +6,14 @@
             @method('PUT')
 
             <div class="modal-header">
-                <h5 class="modal-title" id="backDropModalTitle">Form Edit Gejala</h5>
+                <h5 class="modal-title" id="backDropModalTitle">Form Edit Evidence</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
 
                 <div class="col mb-3">
                     <label for="status" class="form-label">Status
-                        Gejala</label>
+                        Evidence</label>
                     <select class="form-select" aria-label="Default select example" name="status" required id="tes">
                         <option value="" disabled selected>Open this select menu</option>
                         <option value="G">Gejala</option>
@@ -22,7 +22,7 @@
 
                 </div>
                 <div class="col mb-3">
-                    <label for="nameBackdrop" class="form-label">Nama Gejala</label>
+                    <label for="nameBackdrop" class="form-label">Nama Evidence</label>
                     <input type="text" class="form-control" placeholder="Enter Name" name="gejala_nama"
                         id="gejala_nama" required>
 
