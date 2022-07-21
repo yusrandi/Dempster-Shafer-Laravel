@@ -30,8 +30,10 @@
                                                 <th>Tanggal</th>
                                                 <th>Nama Penyakit</th>
                                                 <th>Nama User</th>
-                                                <th class="text-center">CF</th>
-                                                <th class="text-end">Actions</th>
+                                                <th class="text-center">Tingkat Kepercayaan</th>
+                                                @if (auth()->user()->id == 1)
+                                                    <th class="text-end">Actions</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody class="table-border-bottom-0">
@@ -43,6 +45,8 @@
                                                     <td>{{ $item->user->name }}</td>
                                                     <td class="text-center">{{ $item->cf }}</td>
 
+                                                    @if (auth()->user()->id == 1)
+                                                        
                                                     <td class="text-end">
                                                         {{-- <a href="#gejalaEditModal" class="btn btn-success btn-sm edit"
                                                             data-bs-toggle="modal" data-bs-target="#gejalaEditModal"
@@ -56,6 +60,8 @@
                                                         </a>
 
                                                     </td>
+                                                    @endif
+                                                    
                                                 </tr>
                                             @endforeach
                                         </tbody>

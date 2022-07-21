@@ -19,11 +19,14 @@
                     <!-- Modal Backdrop -->
                     <div class="col-lg-12">
                         <div class="mt-0">
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#backDropModal">
-                                Tambah Gejala
-                            </button>
+
+                            @if (auth()->user()->id == 1)
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#backDropModal">
+                                    Tambah Gejala
+                                </button>
+                            @endif
 
                             @include('gejala.includes.modal-create')
                             @include('gejala.includes.modal-edit')
@@ -39,7 +42,9 @@
                                                 <th>Bobot</th>
                                                 <th>Status</th>
                                                 <th class="text-center">Count</th>
-                                                <th class="text-end">Actions</th>
+                                                @if (auth()->user()->id == 1)
+                                                    <th class="text-end">Actions</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody class="table-border-bottom-0">
@@ -52,19 +57,19 @@
                                                     <td>{{ $item->status == 'C' ? 'Ciri-Ciri' : 'Gejala' }}</td>
                                                     <td class="text-center">{{ count($item->basisPengetahuans) }}</td>
 
-                                                    <td class="text-end">
-                                                        <a href="#gejalaEditModal" class="btn btn-success btn-sm edit"
-                                                            data-bs-toggle="modal" data-bs-target="#gejalaEditModal"
-                                                            data-id="{{ $item }}">
-                                                            <i class="bx bx-pencil"></i>
-                                                        </a>
-                                                        <a href="#" id="delete" class="btn btn-danger btn-sm delete"
-                                                            data-id="{{ $item->id }}">
-                                                            <i class="bx bx-trash"></i>
-
-                                                        </a>
-
-                                                    </td>
+                                                    @if (auth()->user()->id == 1)     
+                                                        <td class="text-end">
+                                                            <a href="#gejalaEditModal" class="btn btn-success btn-sm edit"
+                                                                data-bs-toggle="modal" data-bs-target="#gejalaEditModal"
+                                                                data-id="{{ $item }}">
+                                                                <i class="bx bx-pencil"></i>
+                                                            </a>
+                                                            <a href="#" id="delete" class="btn btn-danger btn-sm delete"
+                                                                data-id="{{ $item->id }}">
+                                                                <i class="bx bx-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    @endif
                                                 </tr>
                                             @endforeach
                                         </tbody>

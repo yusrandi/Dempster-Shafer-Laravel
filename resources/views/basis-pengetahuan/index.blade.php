@@ -19,11 +19,15 @@
                     <!-- Modal Backdrop -->
                     <div class="col-lg-12">
                         <div class="mt-0">
+
+                            @if (auth()->user()->id == 1)
+                                
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#backDropModal">
                                 Tambah Basis Pengetahuan
                             </button>
+                            @endif
 
                             @include(
                                 'basis-pengetahuan.includes.modal-create'
@@ -39,7 +43,9 @@
                                                 <th>Penyakit</th>
                                                 <th>Gejala</th>
                                                 
+                                                @if (auth()->user()->id == 1)
                                                 <th class="text-end">Actions</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody class="table-border-bottom-0">
@@ -50,6 +56,8 @@
                                                     <td>{{ $item->gejala->gejala_nama }}</td>
                                                    
 
+                                                    @if (auth()->user()->id == 1)
+                                                        
                                                     <td class="text-end">
                                                         <a href="#basisPengetahuanEditModal"
                                                             class="btn btn-success btn-sm edit" data-bs-toggle="modal"
@@ -62,8 +70,8 @@
                                                             <i class="bx bx-trash"></i>
 
                                                         </a>
-
                                                     </td>
+                                                    @endif
                                                 </tr>
                                             @endforeach
                                         </tbody>

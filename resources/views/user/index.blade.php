@@ -19,12 +19,16 @@
                     <!-- Modal Backdrop -->
                     <div class="col-lg-12">
                         <div class="mt-0">
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#backDropModal">
-                                Tambah User
-                            </button>
 
+                            @if (auth()->user()->id == 1)
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#backDropModal">
+                                    Tambah User
+                                </button>
+
+                            @endif
+                            
                             @include('user.includes.modal-create')
                             @include('user.includes.modal-edit')
 
@@ -38,7 +42,9 @@
                                                 <th>Alamat</th>
                                                 <th>Nomor Hp</th>
                                                 <th class="text-center">Hak Akses</th>
-                                                <th class="text-end">Actions</th>
+                                                @if (auth()->user()->id == 1)
+                                                <th class="text-end">Actions</th>                                                    
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody class="table-border-bottom-0">
@@ -62,6 +68,7 @@
                                                         @endif
                                                     </td>
                                                        
+                                                    @if (auth()->user()->id == 1)
                                                     <td class="text-end">
                                                         <a href="#gejalaEditModal" class="btn btn-success btn-sm edit"
                                                             data-bs-toggle="modal" data-bs-target="#gejalaEditModal"
@@ -75,6 +82,7 @@
                                                         </a>
 
                                                     </td>
+                                                    @endif
                                                 </tr>
                                             @endforeach
                                         </tbody>

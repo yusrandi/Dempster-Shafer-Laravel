@@ -19,11 +19,14 @@
                     <!-- Modal Backdrop -->
                     <div class="col-lg-12">
                         <div class="mt-0">
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#backDropModal">
-                                Tambah Penyakit
-                            </button>
+
+                            @if (auth()->user()->id == 1)     
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#backDropModal">
+                                    Tambah Penyakit
+                                </button>
+                            @endif
 
                             @include('penyakit.includes.modal-create')
                             @include('penyakit.includes.modal-edit')
@@ -37,7 +40,9 @@
                                                 <th>Kode Penyakit/Ciri-Ciri</th>
                                                 <th>Nama Penyakit/Ciri-Ciri</th>
                                                 <th class="text-center">Count</th>
-                                                <th class="text-end">Actions</th>
+                                                @if (auth()->user()->id == 1)
+                                                    <th class="text-end">Actions</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody class="table-border-bottom-0">
@@ -48,19 +53,21 @@
                                                     <td>{{ $item->penyakit_nama }}</td>
                                                     <td class="text-center">{{ count($item->basisPengetahuans) }}</td>
 
-                                                    <td class="text-end">
-                                                        <a href="#penyakitEditModal" class="btn btn-success btn-sm edit"
-                                                            data-bs-toggle="modal" data-bs-target="#penyakitEditModal"
-                                                            data-id="{{ $item }}">
-                                                            <i class="bx bx-pencil"></i>
-                                                        </a>
-                                                        <a href="#" id="delete" class="btn btn-danger btn-sm delete"
-                                                            data-id="{{ $item->id }}">
-                                                            <i class="bx bx-trash"></i>
+                                                    @if (auth()->user()->id == 1)
+                                                        <td class="text-end">
+                                                            <a href="#penyakitEditModal" class="btn btn-success btn-sm edit"
+                                                                data-bs-toggle="modal" data-bs-target="#penyakitEditModal"
+                                                                data-id="{{ $item }}">
+                                                                <i class="bx bx-pencil"></i>
+                                                            </a>
+                                                            <a href="#" id="delete" class="btn btn-danger btn-sm delete"
+                                                                data-id="{{ $item->id }}">
+                                                                <i class="bx bx-trash"></i>
 
-                                                        </a>
+                                                            </a>
 
-                                                    </td>
+                                                        </td>
+                                                    @endif
                                                 </tr>
                                             @endforeach
                                         </tbody>
