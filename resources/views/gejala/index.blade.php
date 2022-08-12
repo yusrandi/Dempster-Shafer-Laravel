@@ -20,14 +20,12 @@
                     <div class="col-lg-12">
                         <div class="mt-0">
 
-                            @if (auth()->user()->id == 1)
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#backDropModal">
                                     Tambah Evidence
                                 </button>
-                            @endif
-
+                            
                             @include('gejala.includes.modal-create')
                             @include('gejala.includes.modal-edit')
 
@@ -57,7 +55,6 @@
                                                     <td>{{ $item->status == 'C' ? 'Ciri-Ciri' : 'Gejala' }}</td>
                                                     <td class="text-center">{{ count($item->basisPengetahuans) }}</td>
 
-                                                    @if (auth()->user()->id == 1)     
                                                         <td class="text-end">
                                                             <a href="#gejalaEditModal" class="btn btn-success btn-sm edit"
                                                                 data-bs-toggle="modal" data-bs-target="#gejalaEditModal"
@@ -69,7 +66,7 @@
                                                                 <i class="bx bx-trash"></i>
                                                             </a>
                                                         </td>
-                                                    @endif
+                                                
                                                 </tr>
                                             @endforeach
                                         </tbody>

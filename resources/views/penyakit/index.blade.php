@@ -20,14 +20,13 @@
                     <div class="col-lg-12">
                         <div class="mt-0">
 
-                            @if (auth()->user()->id == 1)     
+                           
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#backDropModal">
                                     Tambah Penyakit
                                 </button>
-                            @endif
-
+                           
                             @include('penyakit.includes.modal-create')
                             @include('penyakit.includes.modal-edit')
 
@@ -53,7 +52,6 @@
                                                     <td>{{ $item->penyakit_nama }}</td>
                                                     <td class="text-center">{{ count($item->basisPengetahuans) }}</td>
 
-                                                    @if (auth()->user()->id == 1)
                                                         <td class="text-end">
                                                             <a href="#penyakitEditModal" class="btn btn-success btn-sm edit"
                                                                 data-bs-toggle="modal" data-bs-target="#penyakitEditModal"
@@ -67,7 +65,7 @@
                                                             </a>
 
                                                         </td>
-                                                    @endif
+                                                
                                                 </tr>
                                             @endforeach
                                         </tbody>
