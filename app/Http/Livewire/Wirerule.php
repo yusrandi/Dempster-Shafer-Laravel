@@ -1,18 +1,27 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Livewire;
 
 use App\Models\Penyakit;
-use Illuminate\Http\Request;
+use Livewire\Component;
 
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Livewire\WithPagination;
 
-
-class RuleController extends Controller
+class Wirerule extends Component
 {
-    public function index()
+
+    // use WithPagination;
+    public function render()
+    {
+        return view('livewire.wirerule', [
+            'data' => $this->resultData()
+        ]);
+    }
+
+    public function resultData()
     {
         $allData = [];
         $penyakits = Penyakit::with('gejalas')->get();
@@ -67,16 +76,12 @@ class RuleController extends Controller
 
         // return $allData;
 
-        $data = $this->paginate($allData);
+        $data = $this->paginateCustom($allData);
 
-        $data->withPath('rule');
-
-        return view('rule.index', [
-            'data' => $data
-        ]);
+        return $data;
     }
 
-    public function paginate($items, $perPage = 20, $page = null, $options = [])
+    public function paginateCustom($items, $perPage = 10, $page = null, $options = [])
     {
         $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
         $items = $items instanceof Collection ? $items : Collection::make($items);
