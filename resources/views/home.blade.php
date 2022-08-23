@@ -44,7 +44,7 @@
                             <div class="card-body">
                                 <div class="card-title d-flex align-items-start justify-content-between">
                                     <div class="avatar flex-shrink-0">
-                                        <img src="../assets/img/icons/unicons/paypal.png" alt="Credit Card"
+                                        <img src="{{ asset('assets/img/icons/unicons/paypal.png') }}" alt="Credit Card"
                                             class="rounded" />
                                     </div>
                                     <div class="dropdown">
@@ -69,7 +69,7 @@
                             <div class="card-body">
                                 <div class="card-title d-flex align-items-start justify-content-between">
                                     <div class="avatar flex-shrink-0">
-                                        <img src="../assets/img/icons/unicons/cc-primary.png" alt="Credit Card"
+                                        <img src="{{ asset('assets/img/icons/unicons/cc-primary.png') }}" alt="Credit Card"
                                             class="rounded" />
                                     </div>
                                     <div class="dropdown">
@@ -95,7 +95,7 @@
                             <div class="card-body">
                                 <div class="card-title d-flex align-items-start justify-content-between">
                                     <div class="avatar flex-shrink-0">
-                                        <img src="../assets/img/icons/unicons/chart-success.png" alt="chart success"
+                                        <img src="{{ asset('assets/img/icons/unicons/chart-success.png') }}" alt="chart success"
                                             class="rounded" />
                                     </div>
                                     <div class="dropdown">
@@ -120,7 +120,7 @@
                             <div class="card-body">
                                 <div class="card-title d-flex align-items-start justify-content-between">
                                     <div class="avatar flex-shrink-0">
-                                        <img src="../assets/img/icons/unicons/wallet-info.png" alt="Credit Card"
+                                        <img src="{{ asset('assets/img/icons/unicons/wallet-info.png') }}" alt="Credit Card"
                                             class="rounded" />
                                     </div>
                                     <div class="dropdown">
