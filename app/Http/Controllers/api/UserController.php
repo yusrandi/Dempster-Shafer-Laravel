@@ -100,4 +100,40 @@ class UserController extends Controller
             ], 201);
         }
     }
+    public function update(Request $request, $id)
+    {
+        $user = User::findorfail($id);
+
+        if ($request->phone != $user->phone) {
+            $daftar = User::where('phone', $request->phone)
+                ->first();
+
+            if ($daftar) {
+                return response()->json([
+                    'responsecode' => '0',
+                    'responsemsg' => 'Maaf Email atau Nomor anda sudah terdaftar',
+                    'status' => $daftar
+                ], 201);
+            }
+        }
+
+        $data = [
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'nama_anak' => $request->nama_anak,
+            'tgl_lahir_anak' => $request->tgl_lahir_anak,
+            'address' => $request->address,
+        ];
+        if ($request->password) {
+            $data['password'] = Hash::make($request->password);
+        }
+
+        $update = $user->update($data);
+
+        return response()->json([
+            'responsecode' => '0',
+            'responsemsg' => 'Berhasil Mengubah Data',
+            'status' => $update
+        ], 201);
+    }
 }
