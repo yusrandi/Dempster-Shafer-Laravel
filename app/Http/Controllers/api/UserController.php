@@ -136,4 +136,28 @@ class UserController extends Controller
             'status' => $update
         ], 201);
     }
+
+    public function lupapassword(Request $request)
+    {
+        $user = User::where('phone', $request->phone)->first();
+
+        if (!$user) {
+            return response()->json([
+                'responsecode' => '0',
+                'responsemsg' => 'Maaf Nomor anda tidak terdaftar',
+            ], 201);
+        } else {
+            if ($request->password) {
+                $data['password'] = Hash::make($request->password);
+            }
+
+            $update = $user->update($data);
+
+            return response()->json([
+                'responsecode' => '1',
+                'responsemsg' => 'Berhasil Mengubah Password',
+                'status' => $update
+            ], 201);
+        }
+    }
 }

@@ -33,3 +33,4 @@ Route::post('/user/login', [UserController::class, 'login']);
 Route::post('/user/regis', [UserController::class, 'insert']);
 Route::get('/user/{userId}', [UserController::class, 'index']);
 Route::put('/user/{id}', [UserController::class, 'update']);
+Route::post('/user/lupapassword', [UserController::class, 'lupapassword']);
